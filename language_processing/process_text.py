@@ -8,10 +8,12 @@ from google.cloud import language
 from google.cloud.language import types
 from google.cloud.language import enums
 from google.cloud import storage
+from google.protobuf.json_format import MessageToDict
 
 # for local testing
-credential_path = "pastalibs-uncommon2019-6cc325ad8dbc.json"
+credential_path = "pastalibs-uncommon2019-fb268eb00254.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
+
 
 def syntax_text(text):
     # [START language_syntax_text]
@@ -28,8 +30,8 @@ def syntax_text(text):
 
     # Detects syntax in the document. You can also analyze HTML with:
     #   document.type == enums.Document.Type.HTML
-    tokens = client.analyze_syntax(document).tokens
-
+    tokenized = client.analyze_syntax(document).tokens
+    tokens = [MessageToDict(token) for token in tokenized]
     return tokens
 
     # [END language_python_migration_syntax_text]

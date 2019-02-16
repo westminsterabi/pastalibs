@@ -3,24 +3,34 @@
 # increment count if already there
 
 class HMap:
-    def __init__(self):
+    # initializes an HMap
+    # map is the map
+    def __init__(self, tokens):
         self.map = {}
+        self.orig_len = 0
+        # go through JSON outputs and insert into map, increment original length
+        for token in tokens:
+            self.insert(token["text"]["content"])
+            self.orig_len += 1
 
+    # inserts key if it doesn't exist and increments the count by 1
     def insert(self, key):
+        key = key.lower()
         if key not in self.map:
             self.map[key] = 1
         else:
             self.map[key] += 1
+    # returns a list of the least frequently appearing words in the text
+    # number of words returned is 20% of the original string length
+    def least_freq_percent_total(self):
+        least_freq = {}
+        size = self.orig_len * 0.2
+        for key, value in sorted(self.map.items(), key=lambda (k,v): (v,k)):
+            print "%s: %s" % (key, value)
 
+    def least_freq_percent_unique(self):
+        return -1
 
-def make_map(tokens):
-    hmap = HMap()
-
-    # go through JSON outputs and insert
-    for token in tokens:
-        hmap.insert(token["text"]["content"])
-
-    return hmap
 
 
 
@@ -28,35 +38,39 @@ def main():
     tks = [
             {
                 "text": { 
-                    "content": "The", 
-                    "beginOffset": 4
+                    "content": "The" 
                 },
-                "partOfSpeech": {
-                    "tag": "DET",}, 
-                "dependencyEdge": {
-                    "headTokenIndex": 2,
-                    "label": "DET"
-                    },
-                "lemma": "The"
             },
             {
                 "text": {
-                    "content": "The",
-                    "beginOffset": 8
+                    "content": "The"
+                },
+            },
+            {
+                "text": {
+                    "content": "at"
+                },
+            },
+            {
+                "text": {
+                    "content": "blah"
                     },
-                "partOfSpeech": {
-                    "tag": "ADJ",
+            },
+            {
+                "text": {
+                    "content": "the"
                     },
-                "dependencyEdge": {
-                    "headTokenIndex": 2,
-                    "label": "AMOD"
+            },
+            {
+                "text": {
+                    "content": "At"
                     },
-                "lemma": "only"
             }
          ]
-    my_map = make_map(tks)
-    for key in my_map.map:
-        print "(", key, ", ", my_map.map[key], ")"
+    my_map = HMap(tks)
+    #for key in my_map.map:
+        #print "(", key, ", ", my_map.map[key], ")"
+    my_map.least_freq_percent_total()
 
 
 main()
