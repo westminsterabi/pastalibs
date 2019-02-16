@@ -2,19 +2,25 @@
 # insert word into hash_map, with count 1
 # increment count if already there
 
+class HMap:
+    def __init__(self):
+        self.map = {}
+
+    def insert(self, key):
+        if key not in self.map:
+            self.map[key] = 1
+        else:
+            self.map[key] += 1
+
 
 def make_map(tokens):
-    hmap = {}
-    
+    hmap = HMap()
+
     # go through JSON outputs and insert
     for token in tokens:
-        print(token)
+        hmap.insert(token["text"]["content"])
 
-def insert(key, hmap):
-    if key not in hmap:
-        hmap[key] = 1
-    else:
-        hmap[key] += 1
+    return hmap
 
 
 
@@ -35,7 +41,7 @@ def main():
             },
             {
                 "text": {
-                    "content": "only",
+                    "content": "The",
                     "beginOffset": 8
                     },
                 "partOfSpeech": {
@@ -48,7 +54,9 @@ def main():
                 "lemma": "only"
             }
          ]
-    make_map(tks)
+    my_map = make_map(tks)
+    for key in my_map.map:
+        print "(", key, ", ", my_map.map[key], ")"
 
 
 main()
