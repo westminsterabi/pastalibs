@@ -1,19 +1,20 @@
 import json
 
+
+
 # Gets cleaned up text with API call and converts to string
 def get_data():
-    return -1
+    # grab and load JSON
+    # TODO: replace with API call
+    json_text = "[{\"Text\": \"Here is some sample text that we can work with\"}]"
+    data = json.loads(json_text)
 
-# Extracts cleaned up text and returns as string
-def convert_data(data):
-    data_string = data[0]["Text"]
-    return data_string
+    # Grab text string out of data
+    text_string = data[0]["Text"]
+    return text_string
 
 def main():
-    filename = "json_sample.json"
-    file = open(filename, "r")
-    data = json.load(file)
-    convert_data(data)
+    get_data()
 
 if __name__=="__main__":
     main()
