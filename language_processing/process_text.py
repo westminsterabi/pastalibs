@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/env python
 # code from https://cloud.google.com/natural-language/docs/analyzing-syntax
 
@@ -8,8 +7,10 @@ import six
 from google.cloud import language
 from google.cloud.language import types
 from google.cloud.language import enums
+from google.cloud import storage
 
-credential_path = "/Users/amyhuang/Downloads/pastalibs-uncommon2019-6cc325ad8dbc.json"
+# for local testing
+credential_path = "pastalibs-uncommon2019-6cc325ad8dbc.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
 def syntax_text(text):
@@ -29,29 +30,15 @@ def syntax_text(text):
     #   document.type == enums.Document.Type.HTML
     tokens = client.analyze_syntax(document).tokens
 
-    """
-    # part-of-speech tags from enums.PartOfSpeech.Tag
-    pos_tag = ('UNKNOWN', 'ADJ', 'ADP', 'ADV', 'CONJ', 'DET', 'NOUN', 'NUM',
-               'PRON', 'PRT', 'PUNCT', 'VERB', 'X', 'AFFIX')
-
-    for token in tokens:
-        print(u'{}: {}: {}'.format(token.part_of_speech.tag,
-                                   pos_tag[token.part_of_speech.tag],
-                                   token.text.content))
-    """
-    # print(tokens)
     return tokens
 
     # [END language_python_migration_syntax_text]
     # [END language_syntax_text]
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="takes input text and returns syntax")
     parser.add_argument("--text", help="input text")
     args = parser.parse_args()
-    syntax_text(args.text)
-=======
-
->>>>>>> fa886919c976fd9279b8f4b2921cc2372e3b94a5
+    tokens = syntax_text(args.text)
+    print(tokens)
