@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
+from api.language_processing.process_text import syntax_text
 import os
 
 flask_debug = os.getenv('FLASK_DEBUG', True)
@@ -16,6 +17,7 @@ class CopyPasta(Resource):
         args = post_parser.parse_args()
         pasta_text = args.pasta_text
         unicode_text = pasta_text.encode('utf-8').decode('utf-8')
+        tokenized_text = syntax_text(unicode_text)
         return unicode_text
 
 

@@ -4,6 +4,7 @@
 import argparse
 import os
 import six
+import pprint
 from google.cloud import language
 from google.cloud.language import types
 from google.cloud.language import enums
@@ -43,4 +44,6 @@ if __name__ == '__main__':
     parser.add_argument("--text", help="input text")
     args = parser.parse_args()
     tokens = syntax_text(args.text)
-    print(tokens)
+    pretty_printer = pprint.PrettyPrinter()
+    for token in tokens:
+        pretty_printer.pprint(token)
