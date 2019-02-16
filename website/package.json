@@ -1,0 +1,12 @@
+{
+  "name": "pastalibs",
+  "version": "1.0.0",
+  "description": "a web app that does some pretty useless things",
+  "main": "index.js",
+  "repository": "https://github.com/westminsterabi/pastalibs",
+  "author": "Uncommon Hacks 2019",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
