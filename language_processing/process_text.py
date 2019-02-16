@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/env python
 # code from https://cloud.google.com/natural-language/docs/analyzing-syntax
 
@@ -52,6 +51,4 @@ if __name__ == '__main__':
     parser.add_argument("--text", help="input text")
     args = parser.parse_args()
     syntax_text(args.text)
-=======
 
->>>>>>> fa886919c976fd9279b8f4b2921cc2372e3b94a5
