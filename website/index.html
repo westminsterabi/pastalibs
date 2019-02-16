@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</style>
 <body>
 
-<h2>Our header here</h2>
-<p>The <strong>input type="submit"</strong> defines a button for submitting form data to a form-handler:</p>
+<h1>PASTALIB</h1>
+<p>Welcome to PastaLib! Paste your copy pasta below to generate a mad lib.</p>
 
-<form action="/action_page.php">
-  Title:<br>
-  <input type="text" name="firstname" value="My CopyPasta"><br>
-  <input type="submit" value="Submit">
+<form action="http://foo.com" method="post">
+  <div>
+    <label for="title">Title Your PastaLib:</label>
+    <input type="text" name="copyPastaTitle" placeholder="PastaLib Title"><br>
+  </div>
+  <div>
+    <textarea rows="30" cols="175" name="copyPasta" placeholder="Paste your CopyPasta here.">
+    </textarea>
+  </div>
+  <div>
+    <input type="submit" name="submitButton" value="Submit">
+  </div>
 </form>
-
-<textarea rows="4" cols="50">
-  Input your copy pasta here.
-</textarea>
 
 </body>
 </html>
