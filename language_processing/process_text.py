@@ -40,5 +40,10 @@ if __name__ == '__main__':
         description="takes input text and returns syntax")
     parser.add_argument("--text", help="input text")
     args = parser.parse_args()
+<<<<<<< HEAD
     tokens = syntax_text(args.text)
     print(tokens)
+=======
+    syntax_text(args.text)
+
+>>>>>>> d53764fd3a1345b0c66481193b98dfbbc5594c21
