@@ -8,8 +8,7 @@ def construct_paragraph(data):
         paragraph = paragraph + dictword + " "
     return paragraph
 
-def blanker(jdata, list):
-    data = json.loads(jdata)
+def blanker(data, list):
     pos_data = ['']*len(list)
     count = 0
     for word in list:

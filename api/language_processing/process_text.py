@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # code from https://cloud.google.com/natural-language/docs/analyzing-syntax
 from word_freq import create_word_list
 from filters import filter_list
@@ -14,6 +14,7 @@ from google.cloud.language import enums
 from google.cloud import storage
 from google.protobuf.json_format import MessageToDict
 
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'pastalibs-uncommon2019-6cc325ad8dbc.json'
 
 def syntax_text(text):
     # [START language_syntax_text]
@@ -50,7 +51,8 @@ if __name__ == '__main__':
 
     word_list = create_word_list(tokens)
     word_list = filter_list(word_list)
-    tokens = blanker(tokens, word_list)
+    withblanks, posdata = blanker(tokens, word_list)
+    print(withblanks, posdata)
 
 
 
