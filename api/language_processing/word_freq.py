@@ -24,7 +24,7 @@ class HMap:
         least_freq = []
         size = len(self.map) * 0.2
         i = 0
-        for key, value in sorted(self.map.items(), key=lambda (k,v): (v,k)):
+        for key, value in sorted(self.map.items(), key=lambda tup: (tup[1],tup[0])):
             if (i > size):
                 break
             least_freq.append(key)

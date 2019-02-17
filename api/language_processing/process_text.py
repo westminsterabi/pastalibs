@@ -12,7 +12,7 @@ from google.cloud import storage
 from google.protobuf.json_format import MessageToDict
 
 # for local testing
-credential_path = "pastalibs-uncommon2019-fb268eb00254.json"
+credential_path = "/Users/abihunter/pastalibs/api/language_processing/pastalibs-uncommon2019-fb268eb00254.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
 
@@ -37,6 +37,7 @@ def syntax_text(text):
 
     # [END language_python_migration_syntax_text]
     # [END language_syntax_text]
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
