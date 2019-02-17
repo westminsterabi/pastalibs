@@ -14,7 +14,7 @@ from google.cloud.language import enums
 from google.cloud import storage
 from google.protobuf.json_format import MessageToDict
 
-# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'pastalibs-uncommon2019-6cc325ad8dbc.json'
+#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'pastalibs-uncommon2019-6cc325ad8dbc.json'
 
 def syntax_text(text):
     # [START language_syntax_text]

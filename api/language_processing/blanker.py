@@ -11,13 +11,13 @@ def construct_paragraph(data):
 def blanker(data, list):
     pos_data = ['']*len(list)
     count = 0
-    for word in list:
-        for item in data:
+    for item in data:
+        for word in list:
             dictitem = item['text']['content']
             if(dictitem == word[0]):
                 item['text']['content'] = "_____"
                 pos_data[count] = item['partOfSpeech']['tag']
-        count = count + 1
+                count = count + 1
     para = construct_paragraph(data)
     jpos_data = {
         'data':
