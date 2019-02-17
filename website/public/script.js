@@ -6,9 +6,12 @@ $(document).ready(function(){
   });
 });
 
+document.write("test")
+document.write(JSONdata)
+
 //var JSONdata = '{"data":{"partofspeech": ["VERB", "ADV", "NOUN"], "text":"I ran happily through the meadow"}}'; // example
 var alldata = JSON.parse(JSONdata);
-var posdata = alldata.data.partofspeech;
+var posdata = alldata.blanked_text.data.parts_of_speech;
 
 function createEntries(list, length, div_id) {
     var i;
