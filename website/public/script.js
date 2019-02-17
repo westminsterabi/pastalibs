@@ -7,15 +7,15 @@ function createEntries(list, length, div_id) {
     for(i=0; i<length; i++) {
         var mylabel = document.createElement("label");
         mylabel.setAttribute("for",list[i]);
-        mylabel.setAttribute("class","wordtypelabs")
+        mylabel.setAttribute("class","wordtypelabs");
 
         var node = document.createTextNode(list[i]);
         mylabel.appendChild(node);
 
         var myinput = document.createElement("input")
         myinput.setAttribute("type","text");
-        myinput.setAttribute("id", list[i]);
-        myinput.setAttribute("class","wordinputs")
+        myinput.setAttribute("name", list[i]);
+        myinput.setAttribute("class","wordinputs");
 
         var element = document.getElementById(div_id);
 
