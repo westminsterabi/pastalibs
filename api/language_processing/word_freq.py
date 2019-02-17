@@ -24,7 +24,7 @@ class HMap:
 
 def create_word_list(tks):
     hmap = HMap(tks)
-    word_list = hmap.least_freq(tks)
+    word_list = hmap.least_freq()
     return word_list
     
 
