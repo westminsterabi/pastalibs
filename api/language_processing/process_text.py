@@ -39,6 +39,12 @@ def syntax_text(text):
     # [END language_syntax_text]
 
 
+def get_blanked_data(tokens):
+    word_list = create_word_list(tokens)
+    word_list = filter_list(word_list)
+    return blanker(tokens, word_list)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="takes input text and returns syntax")
@@ -48,12 +54,7 @@ if __name__ == '__main__':
     pretty_printer = pprint.PrettyPrinter()
     for token in tokens:
         pretty_printer.pprint(token)
-
-    word_list = create_word_list(tokens)
-
-    word_list = filter_list(word_list)
-
-    withblanks, posdata = blanker(tokens, word_list)
+    with_blanks, part_of_speech_data = get_blanked_data(tokens)
     #pretty_printer.pprint(withblanks)
     #print(posdata)
 
