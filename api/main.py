@@ -18,7 +18,7 @@ class CopyPasta(Resource):
         pasta_text = args.pasta_text
         unicode_text = pasta_text.encode('utf-8').decode('utf-8')
         tokenized_text = syntax_text(unicode_text)
-        return unicode_text
+        return '{"data": "whatever"}'
 
     def get(self):
         return '{"hello": "world}'
