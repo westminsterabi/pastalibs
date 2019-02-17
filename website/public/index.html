@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>PastaLibs</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans|Shadows+Into+Light" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </style>
 <body>
 
@@ -13,7 +16,7 @@
   <p>Welcome to PastaLibs! Paste your copy pasta below to generate a mad lib.</p>
 </div>
 
-<form action="http://localhost:4000" method="post" class="formfields">
+<form action="http://localhost:4000" method="post" class="formfields" id="pg1form">
   <div>
     <label>Title Your PastaLib:</label>
     <input type="text" name="copyPastaTitle" placeholder="PastaLib Title"><br>

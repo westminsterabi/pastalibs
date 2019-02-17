@@ -38,3 +38,9 @@ createEntry(num_nouns, "NOUN", "noun");
 createEntry(num_adjs, "ADJECTIVE", "adj");
 createEntry(num_advs, "ADVERB", "adv");
 createEntry(num_nums, "NUMBER", "num");
+
+$(document).ready(function(){
+    $(".homebutton").click(function(){
+        $(".homebutton").css("background-color","blue")
+    });
+  });
