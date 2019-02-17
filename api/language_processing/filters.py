@@ -8,9 +8,10 @@ def filter_list(word_list):
     new_list = []
     # We only want these parts of speech
     desired_pos = {"ADV", "ADJ", "VERB", "NOUN", "NUM"}
+    undesired_words = {"also", "ago"}
     # remove undesired parts of speech and stop words
     for word in word_list:
-        if word[1] in desired_pos and word[0] not in stop_words:
+        if word[1] in desired_pos and word[0] not in stop_words and word[0] not in undesired_words:
             new_list.append(word)
 
     return new_list[0:return_size]
