@@ -48,3 +48,4 @@ if __name__ == '__main__':
     pretty_printer = pprint.PrettyPrinter()
     for token in tokens:
         pretty_printer.pprint(token)
+

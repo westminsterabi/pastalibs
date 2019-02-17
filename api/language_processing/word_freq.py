@@ -1,7 +1,3 @@
-# go through words in returned JSON file
-# insert word into hash_map, with count 1
-# increment count if already there
-
 class HMap:
     # initializes an HMap
     # map is the map
@@ -31,6 +27,7 @@ class HMap:
             i += 1
 
         return least_freq
+    
 
 ### for testing purposes
 #def main():
