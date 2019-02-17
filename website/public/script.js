@@ -6,8 +6,6 @@ $(document).ready(function(){
   });
 });
 
-document.write("test")
-document.write(JSONdata)
 
 //var JSONdata = '{"data":{"partofspeech": ["VERB", "ADV", "NOUN"], "text":"I ran happily through the meadow"}}'; // example
 var alldata = JSON.parse(JSONdata);
