@@ -21,6 +21,11 @@ class HMap:
             least_freq.append(key)
 
         return least_freq
+
+def create_word_list(tks):
+    hmap = HMap(tks)
+    word_list = hmap.map.least_freq(tks)
+    return word_list
     
 
 ### for testing purposes
