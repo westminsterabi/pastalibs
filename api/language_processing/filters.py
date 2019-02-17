@@ -1,7 +1,9 @@
 import math
-import nltk
-from nltk.corpus import stopwords
-stop_words = set(stopwords.words('english'))
+# from nltk.corpus import stopwords
+# stop_words = set(stopwords.words('english'))
+
+with open('language_processing/stopwords.txt', 'r') as f:
+    stop_words = f.readlines()
 
 def filter_list(word_list):
     return_size = math.floor(len(word_list) * 0.2)
