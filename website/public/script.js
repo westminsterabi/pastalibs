@@ -1,4 +1,12 @@
-var JSONdata = '{"data":{"partofspeech": ["VERB", "ADV", "NOUN"], "text":"I ran happily through the meadow"}}'; // example
+$(document).ready(function(){
+  const URL = "http://localhost:4000/posts"
+
+  $.getJSON(URL, function(result){
+    var JSONdata = result;
+  });
+});
+
+//var JSONdata = '{"data":{"partofspeech": ["VERB", "ADV", "NOUN"], "text":"I ran happily through the meadow"}}'; // example
 var alldata = JSON.parse(JSONdata);
 var posdata = alldata.data.partofspeech;
 
