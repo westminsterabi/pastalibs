@@ -20,6 +20,9 @@ class CopyPasta(Resource):
         tokenized_text = syntax_text(unicode_text)
         return unicode_text
 
+    def get(self):
+        return '{"hello": "world}'
+
 
 api.add_resource(CopyPasta, '/pasta_text')
 

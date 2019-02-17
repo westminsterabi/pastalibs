@@ -11,10 +11,6 @@ from google.cloud.language import enums
 from google.cloud import storage
 from google.protobuf.json_format import MessageToDict
 
-# for local testing
-credential_path = "/Users/abihunter/pastalibs/api/language_processing/pastalibs-uncommon2019-fb268eb00254.json"
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
-
 
 def syntax_text(text):
     # [START language_syntax_text]
