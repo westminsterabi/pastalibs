@@ -1,0 +1,5 @@
+dispatch:
+  - url: "pastalibs-uncommon2019.appspot.com/"
+    service: "frontend"
+  -url: "*/api/*"
+    service: "api"

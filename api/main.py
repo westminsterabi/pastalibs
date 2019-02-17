@@ -20,8 +20,11 @@ class CopyPasta(Resource):
         tokenized_text = syntax_text(unicode_text)
         return unicode_text
 
+    def get(self):
+        return '{"hello": "world}'
+
 
 api.add_resource(CopyPasta, '/pasta_text')
 
 if __name__ == '__main__':
-    app.run(debug=flask_debug, port=4000)
+    app.run(host='127.0.0.1', port=8080, debug=True)
