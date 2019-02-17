@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 //var JSONdata = '{"data":{"partofspeech": ["VERB", "ADV", "NOUN"], "text":"___ ran ___ through the ___"}}'; // example
 var alldata = JSON.parse(JSONdata);
-var textdata = alldata.data.text;
+var textdata = alldata.blanked_text.data.text;
 
 var para = document.createElement("p")
 var node = document.createTextNode(textdata);
