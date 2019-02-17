@@ -19,9 +19,24 @@ jQuery(document).ready(function() {
       data: formData,
       dataType: "json",
       contentType : "application/json"
-    }).done(function(){
+    }).done(function(result){
         console.log("done!")
+        // page 2
         window.location.href = "pos.html"
+        var JSONdata = result
+        var alldata = JSON.parse(JSONdata);
+        var posdata = alldata.blanked_text.data.parts_of_speech;
+        createEntries(posdata, posdata.length, "div1")
+
+        // page 3
+        // var alldata = JSON.parse(JSONdata);
+        // var textdata = alldata.blanked_text.data.text;
+
+        // var para = document.createElement("p")
+        // var node = document.createTextNode(textdata);
+        // para.appendChild(node);
+        // var element = document.getElementById("div1")
+        // element.appendChild(para)
 
     }).fail(function(){
         alert("Failed")
