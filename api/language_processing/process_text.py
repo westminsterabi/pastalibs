@@ -14,7 +14,7 @@ from google.cloud.language import enums
 from google.cloud import storage
 from google.protobuf.json_format import MessageToDict
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'pastalibs-uncommon2019-6cc325ad8dbc.json'
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'pastalibs-uncommon2019-6cc325ad8dbc.json'
 
 def syntax_text(text):
     # [START language_syntax_text]
@@ -50,9 +50,12 @@ if __name__ == '__main__':
         pretty_printer.pprint(token)
 
     word_list = create_word_list(tokens)
+
     word_list = filter_list(word_list)
+
     withblanks, posdata = blanker(tokens, word_list)
-    print(withblanks, posdata)
+    #pretty_printer.pprint(withblanks)
+    #print(posdata)
 
 
 

@@ -14,7 +14,7 @@ def blanker(data, list):
     for word in list:
         for item in data:
             dictitem = item['text']['content']
-            if(dictitem == word):
+            if(dictitem == word[0]):
                 item['text']['content'] = "_____"
                 pos_data[count] = item['partOfSpeech']['tag']
         count = count + 1
