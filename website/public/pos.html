@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
-</style>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
 <h1>PASTALIB</h1>
 <p>Enter words corresponding to the parts of speech. </p>
 
-<form action="http://foo.com" method="post">
-  <div>
-    <label for="title">VERB:</label>
-    <input type="text" name="verb" placeholder="" id="verb1"><br>
-  </div>
+<div id="verbs">
+    <p id="verb"></p>
+</div>
+<div id="nouns">
+    <p id="noun"></p>
+</div>
+<div id="adjectives">
+    <p id="adj"></p>
+</div>
+<div id="adverbs">
+    <p id="adv"></p>
+</div>
+<div id="nums">
+    <p id="num"></p>
+</div>
 
-  <div>
-    <input type="submit" name="submitButton" value="Submit">
-  </div>
-</form>
+<script src="script.js"></script>
 
 </body>
 </html>
