@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # code from https://cloud.google.com/natural-language/docs/analyzing-syntax
-from "word_freq.py" import create_word_list
-from "filters.py" import filter_list
+from word_freq import create_word_list
+from filters import filter_list
+from blanker import blanker
+
 import argparse
 import os
 import six
@@ -48,6 +50,7 @@ if __name__ == '__main__':
 
     word_list = create_word_list(tokens)
     word_list = filter_list(word_list)
+    tokens = blanker(tokens, word_list)
 
 
 
