@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
-from api.language_processing.process_text import syntax_text
+from language_processing.process_text import syntax_text
 import os
 
 flask_debug = os.getenv('FLASK_DEBUG', True)
