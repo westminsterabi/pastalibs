@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  const URL = "http://localhost:8000/pasta_text"
+  const URL = "http://127.0.0.1:8000"
 
   $.getJSON(URL, function(result){
     var JSONdata = result;
