@@ -23,109 +23,107 @@ class HMap:
     def least_freq(self):
         least_freq = []
         size = len(self.map) * 0.2
-        print(size)
         i = 0
         for key, value in sorted(self.map.items(), key=lambda (k,v): (v,k)):
             if (i > size):
                 break
-            least_freq.append((key, value))
+            least_freq.append(key)
             i += 1
 
         return least_freq
 
-def main():
-    tks = [
-            {
-                "text": { 
-                    "content": "The" 
-                },
-            },
-            {
-                "text": {
-                    "content": "The"
-                },
-            },
-            {
-                "text": {
-                    "content": "at"
-                },
-            },
-            {
-                "text": {
-                    "content": "blah"
-                    },
-            },
-            {
-                "text": {
-                    "content": "the"
-                    },
-            },
-            {
-                "text": {
-                    "content": "At"
-                    },
-            },
-            {
-                "text": {
-                    "content": "one"
-                    },
-            },
-            {
-                "text": {
-                    "content": "two"
-                    },
-            },
-            {
-                "text": {
-                    "content": "three"
-                    },
-            },
-            {
-                "text": {
-                    "content": "four"
-                    },
-            },
-            {
-                "text": {
-                    "content": "five"
-                    },
-            },
-            {
-                "text": {
-                    "content": "six"
-                    },
-            },
-            {
-                "text": {
-                    "content": "seven"
-                    },
-            },
-            {
-                "text": {
-                    "content": "eight"
-                    },
-            },
-            {
-                "text": {
-                    "content": "nine"
-                    },
-            },
-            {
-                "text": {
-                    "content": "ten"
-                    },
-            }
+### for testing purposes
+#def main():
+#    tks = [
+#            {
+#                "text": { 
+#                    "content": "The" 
+#                },
+#            },
+#            {
+#                "text": {
+#                    "content": "The"
+#                },
+#            },
+#            {
+#                "text": {
+#                    "content": "at"
+#                },
+#            },
+#            {
+#                "text": {
+#                    "content": "blah"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "the"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "At"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "one"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "two"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "three"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "four"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "five"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "six"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "seven"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "eight"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "nine"
+#                    },
+#            },
+#            {
+#                "text": {
+#                    "content": "ten"
+#                    },
+#            }
             
-         ]
-    my_map = HMap(tks)
-    #for key in my_map.map:
-        #print "(", key, ", ", my_map.map[key], ")"
-    least_freq = my_map.least_freq()
-    for item in least_freq:
-        print(item)
+#         ]
+#    my_map = HMap(tks)
+#    #for key in my_map.map:
+#        #print "(", key, ", ", my_map.map[key], ")"
+#    least_freq = my_map.least_freq()
 
 
-main()
+#main()
 
 
 
