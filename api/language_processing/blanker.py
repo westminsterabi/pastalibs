@@ -24,7 +24,7 @@ def blanker(data, list):
             {'part_of_speech': pos_data,
              'text': para},
     }
-    return json.dumps(data), jpos_data
+    return data, jpos_data
 
 
 

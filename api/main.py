@@ -1,6 +1,7 @@
 from flask import Flask
+from flask.json import jsonify
 from flask_restful import Resource, Api, reqparse
-from language_processing.process_text import syntax_text
+from language_processing.process_text import get_blanked_data, syntax_text
 import os
 
 flask_debug = os.getenv('FLASK_DEBUG', True)
@@ -17,11 +18,15 @@ class CopyPasta(Resource):
         args = post_parser.parse_args()
         pasta_text = args.pasta_text
         unicode_text = pasta_text.encode('utf-8').decode('utf-8')
-        tokenized_text = syntax_text(unicode_text)
-        return '{"data": "whatever"}'
+        tokens = syntax_text(unicode_text)
+        part_of_speech_data, with_blanks = get_blanked_data(tokens)
+        payload_dict = {'data': {'parts_of_speech': part_of_speech_data,
+                                 'blanked_text': with_blanks}}
+        #payload = jsonify(payload_dict)
+        return payload_dict
 
     def get(self):
-        return '{"hello": "world}'
+        return '{"hello": "world"}'
 
 
 api.add_resource(CopyPasta, '/pasta_text')
