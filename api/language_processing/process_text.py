@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # code from https://cloud.google.com/natural-language/docs/analyzing-syntax
-
+from "word_freq.py" import create_word_list
+from "filters.py" import filter_list
 import argparse
 import os
 import six
@@ -44,4 +45,10 @@ if __name__ == '__main__':
     pretty_printer = pprint.PrettyPrinter()
     for token in tokens:
         pretty_printer.pprint(token)
+
+    word_list = create_word_list(tokens)
+    word_list = filter_list(word_list)
+
+
+
 
