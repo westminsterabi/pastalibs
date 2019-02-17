@@ -5,16 +5,22 @@ jQuery(document).ready(function() {
     
     event.preventDefault();
     
-    var formData = JSON.stringify($("myForm").serializeArray());
+    var formData = $("#pg1form");
     console.log("test")
+    formData = JSON.stringify(formData.serializeArray())
     console.log(formData)
-    
+
     $.ajax({
       type: "POST",
-      url: "http://localhost:8000/pasta_text",
+      url: "../http://127.0.0.1:8000/",
       data: formData,
       dataType: "jsonp",
       contentType : "application/json"
+    }).done(function(){
+        console.log("done!")
+        window.location.href = "pos.html"
+    }).fail(function(){
+        alert("Failed")
     });
   });
 })
