@@ -5,19 +5,42 @@ html, body {
 }
 .titleheader {
   background-color: #E54B4B;
-  padding: 50px 200px;
+  color: white;
+  padding: 25px 0px 15px;
   text-align: center;
 }
+.titleheader2 {
+  background-color: #E54B4B;
+  color: white;
+  padding: 4px 0px 4px 24px;
+}
 h1 {
-  color: black;
-  font-size: 40px;
+  margin: 0px 0px 0px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 5em;
+}
+h2 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2em;
 }
 p {
-  font-size: 18px;
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+}
+#leftimage {
+  float: left;
+  width: 18%;
+}
+#rightimage {
+  float: right;
+  width: 18%;
+}
+#smallimage {
+  float: right;
+  width: 10%;
 }
 body {
   background-color: #B5B5B5;
-  font-size: 18px;
 }
 .formfields {
   padding: 10px 10px;
@@ -29,18 +52,19 @@ textarea {
   border-radius: 4px;
   padding: 12px 6px;
   margin: 12px 0;
+  width: 98%
 }
 input[type=text], select {
   width: 20%;
   padding: 12px 10px;
-  margin: 6px 0px 24px;
+  margin: 6px 10px 24px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 input[type=submit] {
   width: 20%;
-  background-color: #4CAF50;
+  background-color: #E54B4B;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
