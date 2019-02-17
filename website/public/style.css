@@ -86,3 +86,8 @@ input[type=submit] {
   font-size: 2em;
   border: none;
 }
+.wordtypelabs {
+  display: inline-block;
+  width: 60px;
+  text-align: right;
+}

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # code from https://cloud.google.com/natural-language/docs/analyzing-syntax
-from word_freq import create_word_list
-from filters import filter_list
-from blanker import blanker
+from language_processing.word_freq import create_word_list
+from language_processing.filters import filter_list
+from language_processing.blanker import blanker
 
 import argparse
 import os
