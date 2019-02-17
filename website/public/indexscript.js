@@ -3,7 +3,7 @@ jQuery(document).on('ready', function() {
     
     event.preventDefault();
     
-    var formData = JSON.stringify($("myForm").serializeArray());
+    var formData = JSON.stringify($("#myForm").serializeArray());
     
     $.ajax({
       type: "POST", 
