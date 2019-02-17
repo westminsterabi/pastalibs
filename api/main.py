@@ -1,12 +1,14 @@
 from flask import Flask
 from flask.json import jsonify
 from flask_restful import Resource, Api, reqparse
+from flask_cors import CORS
 from language_processing.process_text import get_blanked_data, syntax_text
 import os
 
 flask_debug = os.getenv('FLASK_DEBUG', True)
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 
 post_parser = reqparse.RequestParser()
