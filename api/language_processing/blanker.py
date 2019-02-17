@@ -17,7 +17,7 @@ def blanker(jdata, list):
             dictitem = item['text']['content']
             if(dictitem == word):
                 item['text']['content'] = "_____"
-                pos_data[count] = item['part_of_speech']['tag']
+                pos_data[count] = item['partOfSpeech']['tag']
         count = count + 1
     para = construct_paragraph(data)
     jpos_data = {

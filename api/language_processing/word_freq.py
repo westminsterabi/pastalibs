@@ -5,7 +5,7 @@ class HMap:
         self.map = {}
         # go through JSON outputs and insert into map, increment original length
         for token in tokens:
-            self.insert((token["text"]["content"], token["part_of_speech"]["tag"]))
+            self.insert((token["text"]["content"], token["partOfSpeech"]["tag"]))
 
     # inserts key if it doesn't exist and increments the count by 1
     def insert(self, key):
