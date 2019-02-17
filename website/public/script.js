@@ -5,11 +5,24 @@ var posdata = alldata.data.partofspeech;
 function createEntries(list, length, div_id) {
     var i;
     for(i=0; i<length; i++) {
-        var para = document.createElement("p");
+        var mylabel = document.createElement("label");
+        mylabel.setAttribute("for",list[i]);
+        mylabel.setAttribute("class","wordtypelabs")
+
         var node = document.createTextNode(list[i]);
-        para.appendChild(node);
+        mylabel.appendChild(node);
+
+        var myinput = document.createElement("input")
+        myinput.setAttribute("type","text");
+        myinput.setAttribute("id", list[i]);
+        myinput.setAttribute("class","wordinputs")
+
         var element = document.getElementById(div_id);
-        element.appendChild(para);
+
+        element.appendChild(mylabel);
+        $(mylabel).after(myinput);
+
+        element.appendChild(document.createElement("br"))
     }
 }
 
@@ -18,6 +31,6 @@ $(document).ready(function(){
         $(".homebutton").css("background-color","blue")
     });
   });
-  
+
 var div_id = "div1";
 createEntries(posdata, posdata.length, div_id);

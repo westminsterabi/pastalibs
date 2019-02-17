@@ -23,7 +23,7 @@ h2 {
   font-family: 'Shadows Into Light', cursive;
   font-size: 2em;
 }
-p {
+h3 {
   font-size: 1.2em;
   font-family: 'Open Sans', sans-serif;
 }
@@ -49,6 +49,10 @@ body {
   background-color: #B5B5B5;
 }
 .formfields {
+  padding: 10px 10px;
+  margin: 10px 10px;
+}
+.pagebody {
   padding: 10px 10px;
   margin: 10px 10px;
 }
@@ -84,4 +88,8 @@ input[type=submit] {
   color: white;
   font-family: 'Shadows Into Light', cursive;
   font-size: 2em;
+  border: none;
+}
+.wordtypelabs{
+  margin: 0px 50px 0px 0px;
 }
