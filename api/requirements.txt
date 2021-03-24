@@ -36,7 +36,7 @@ pyasn1-modules==0.2.4
 Pygments==2.3.1
 pytz==2018.9
 requests==2.21.0
-rsa==4.0
+rsa==4.1
 singledispatch==3.4.0.3
 six==1.12.0
 traitlets==4.3.2
